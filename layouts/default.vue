@@ -28,9 +28,9 @@
           <div>
             <h3 class="font-bold mb-4">Contact</h3>
             <ul class="space-y-2 text-gray-400">
-              <li>📧 info@qr-recycle.com</li>
-              <li>📱 +1 (XXX) XXX-XXXX</li>
-              <li>📍 Your City</li>
+              <li>📧 info@gmail.com</li>
+              <li>📱 +48 (XXX) XXX-XXXX</li>
+              <li>📍 Łódź </li>
             </ul>
           </div>
         </div>

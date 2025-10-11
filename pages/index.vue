@@ -4,10 +4,7 @@
       <!-- Hero Section -->
       <div class="text-center mb-16">
         <h1 class="text-6xl font-bold text-gray-900 mb-4">
-          QR Recycle 
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-            ♻️
-          </span>
+          QR Recycle ♻️
         </h1>
         <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
           Scan QR codes and find the nearest recycling points. 
@@ -32,7 +29,7 @@
       <!-- Features Section -->
       <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <div class="bg-white rounded-xl shadow-xl p-8 hover:shadow-2xl transition">
-          <div class="text-4xl mb-4">�</div>
+          <div class="text-4xl mb-4">🗺️</div>
           <h3 class="text-xl font-bold mb-2 text-gray-900">Points Map</h3>
           <p class="text-gray-600">
             Find the nearest recycling collection point on an interactive map
