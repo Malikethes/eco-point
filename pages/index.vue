@@ -4,7 +4,7 @@
       <!-- Hero Section -->
       <div class="text-center mb-16">
         <h1 class="text-6xl font-bold text-gray-900 mb-4">
-          QR Recycle ♻️
+          <img src="assets/images/Logo_ecopoint_fully_transparent.png" alt="Ecopoint logo" class="mx-auto w-48 h-auto">
         </h1>
         <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
           Scan QR codes and find the nearest recycling points. 
