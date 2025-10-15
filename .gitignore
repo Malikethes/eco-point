@@ -27,3 +27,5 @@ node_modules/
 .nuxt/
 dist/
 
+package-lock.json
+package.json

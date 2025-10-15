@@ -4,8 +4,7 @@
       <!-- Header -->
       <div class="text-center mb-12">
         <h1 class="text-4xl font-bold text-gray-900 mb-3">Contact Us</h1>
-        <p class="text-lg text-gray-600">
-        </p>
+        <p class="text-lg text-gray-600"/>
       </div>
 
       <div class="max-w-2xl mx-auto">
@@ -21,7 +20,7 @@
                 type="text" 
                 placeholder="John Doe"
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+              >
             </div>
             
             <div>
@@ -32,7 +31,7 @@
                 type="email" 
                 placeholder="your@email.com"
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+              >
             </div>
             
             <div>
@@ -56,7 +55,7 @@
                 rows="5" 
                 placeholder="Your message..."
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-              ></textarea>
+              />
             </div>
             
             <button 
