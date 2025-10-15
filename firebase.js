@@ -1,9 +1,7 @@
-// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Your config from Firebase Console
 const firebaseConfig = {
 
   apiKey: "AIzaSyDMXh5q2E6njyDIJ_fyp_lCuVTP3QDemiI",

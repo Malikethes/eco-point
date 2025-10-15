@@ -4,8 +4,8 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center space-x-2 hover:opacity-80 transition">
-          <span class="text-3xl">♻️</span>
-          <span class="text-xl font-bold text-gray-900">QR Recycle</span>
+          <span class="text-3xl"><img src="assets/images/Logo_ecopoint_fully_transparent_notext.png" alt="Ecopoint logo" class="mx-auto w-10 h-auto"></span>
+          <span class="text-xl font-bold" style="color: #007337;">EcoPoint</span>
         </NuxtLink>
         
         <!-- Navigation Links -->
