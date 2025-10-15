@@ -104,7 +104,7 @@
 <script setup>
 import { ref } from 'vue';
 import useAuth from '~/composables/useAuth';
-import { runTransaction, setDoc, doc, serverTimestamp } from 'firebase/firestore';
+import { runTransaction, setDoc, doc, serverTimestamp, getDoc, deleteDoc } from 'firebase/firestore';
 
 definePageMeta({
   layout: 'auth'
@@ -141,9 +141,15 @@ const onSubmit = async () => {
     return;
   }
   loading.value = true;
-  let mappingCreated = false;
   const usernameRef = doc(db, 'usernames', uname);
   try {
+    const usernameSnap = await getDoc(usernameRef);
+    if (usernameSnap.exists()) {
+      error.value = 'Username already taken';
+      loading.value = false;
+      return;
+    }
+    
     const cred = await register(email.value, password.value);
     const uid = cred.user.uid;
 
@@ -152,7 +158,6 @@ const onSubmit = async () => {
       if (snap.exists()) throw new Error('username-taken');
       tx.set(usernameRef, { uid, createdAt: serverTimestamp() });
     });
-    mappingCreated = true;
     const achievementRef = doc(db, 'achievements', defaultAchievementId);
 
     await setDoc(doc(db, 'users', uid), {
@@ -176,9 +181,12 @@ const onSubmit = async () => {
       error.value = e?.code ? e.code.replace('auth/', '').replace(/-/g, ' ') : 'Signup failed';
     }
 
-    if (mappingCreated) {
-      try { await deleteDoc(usernameRef); } catch (err) { console.warn('cleanup failed', err); }
-    }
+    try {
+      const finalSnap = await getDoc(usernameRef);
+      if (finalSnap.exists() && finalSnap.data().uid && cred && cred.user && finalSnap.data().uid === cred.user.uid) {
+        await deleteDoc(usernameRef);
+      }
+    } catch (err) { console.warn('cleanup failed', err); }
   } finally {
     loading.value = false;
   }
