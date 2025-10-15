@@ -19,7 +19,7 @@
               type="email" 
               placeholder="your@email.com"
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-            />
+            >
           </div>
 
           <div>
@@ -30,7 +30,7 @@
               type="password" 
               placeholder="••••••••"
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
-            />
+            >
           </div>
 
           <div class="flex items-center justify-between">
@@ -54,7 +54,7 @@
         <div class="mt-6">
           <div class="relative">
             <div class="absolute inset-0 flex items-center">
-              <div class="w-full border-t border-gray-300"></div>
+              <div class="w-full border-t border-gray-300"/>
             </div>
             <div class="relative flex justify-center text-sm">
               <span class="px-2 bg-white text-gray-500">Or continue with</span>
