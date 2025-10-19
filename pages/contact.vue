@@ -73,6 +73,6 @@
 
 <script setup>
 
-const { locale, setLocale } = useI18n();
+// const { locale, setLocale } = useI18n();
 
 </script>
