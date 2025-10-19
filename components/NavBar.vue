@@ -23,12 +23,6 @@
             Map
           </NuxtLink>
           <NuxtLink 
-            to="/about" 
-            class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 font-medium transition"
-          >
-            About
-          </NuxtLink>
-          <NuxtLink 
             to="/contact" 
             class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 font-medium transition"
           >
