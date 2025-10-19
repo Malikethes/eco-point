@@ -1,10 +1,104 @@
 {
   "hello": "Cześć!",
-  "welcome": "Welcome to our app",
+  "welcome": "Witamy w naszej aplikacji",
+  "message": "Wiadomość",
   "nav": {
-    "home": "Domek",
+    "home": "Strona główna",
     "map": "Mapa",
     "about": "O nas",
     "contact": "Kontakt"
+  },
+  "home": {
+    "title": "EcoPoint",
+    "subtitle": "Skanuj kody QR i znajdź najbliższe punkty recyklingu. Razem czynimy świat czystszym!",
+    "findPoint": "Znajdź punkt recyklingu",
+    "learnMore": "Dowiedz się więcej",
+    "pointsMap": "Mapa punktów",
+    "pointsMapDesc": "Znajdź najbliższy punkt zbiórki odpadów na interaktywnej mapie",
+    "qrScanning": "Skanowanie QR",
+    "qrScanningDesc": "Skanuj kody QR na opakowaniach, aby uzyskać informacje o recyklingu",
+    "ecoStats": "Eko-statystyki",
+    "ecoStatsDesc": "Zobacz swój pozytywny wpływ na środowisko w czasie"
+  },
+  "about": {
+    "title": "O nas",
+    "subtitle": "EcoPoint to innowacyjna platforma upraszczająca proces recyklingu odpadów",
+    "mission": "Nasza misja",
+    "missionText": "Dążymy do tego, aby recykling odpadów był prosty i dostępny dla wszystkich. Nasza platforma pomaga ludziom znaleźć najbliższe punkty recyklingu i uzyskać informacje o prawidłowej utylizacji różnych materiałów.",
+    "ecoFriendly": "Ekologiczne",
+    "ecoFriendlyDesc": "Pomóż zmniejszyć ilość odpadów na wysypiskach i przyczyń się do ochrony zasobów naturalnych",
+    "convenience": "Wygoda",
+    "convenienceDesc": "Interaktywna mapa z aktualnymi informacjami o punktach recyklingu w Twojej okolicy",
+    "transparency": "Przejrzystość",
+    "transparencyDesc": "Pełne informacje o przyjmowanych rodzajach materiałów i godzinach pracy",
+    "community": "Społeczność",
+    "communityDesc": "Dołącz do tysięcy osób, które dbają o środowisko",
+    "getStarted": "Rozpocznij"
+  },
+  "contact": {
+    "title": "Skontaktuj się z nami",
+    "subtitle": "Chętnie wysłuchamy Twoich pytań",
+    "sendMessage": "Wyślij wiadomość",
+    "yourName": "Twoje imię",
+    "email": "Email",
+    "subject": "Temat",
+    "message": "Wiadomość",
+    "sendBtn": "Wyślij wiadomość",
+    "placeholders": {
+      "name": "Jan Kowalski",
+      "email": "twoj{'@'}email.com",
+      "message": "Twoja wiadomość..."
+    },
+    "dropdown": {
+      "select": "Wybierz temat",
+      "general": "Ogólne pytanie",
+      "support": "Wsparcie techniczne",
+      "partnership": "Partnerstwo",
+      "other": "Inne"
+    }
+  },
+  "map": {
+    "title": "Mapa punktów recyklingu",
+    "subtitle": "Znajdź najbliższy punkt zbiórki odpadów",
+    "searchByAddress": "Szukaj według adresu",
+    "searchPlaceholder": "Wpisz adres lub nazwę dzielnicy...",
+    "materialType": "Rodzaj materiału",
+    "allTypes": "Wszystkie typy",
+    "plastic": "Plastik",
+    "glass": "Szkło",
+    "paper": "Papier",
+    "metal": "Metal",
+    "electronics": "Elektronika",
+    "batteries": "Baterie",
+    "interactiveMap": "Interaktywna mapa",
+    "mapPlaceholder": "Mapa z punktami zbiórki zostanie wyświetlona tutaj",
+    "point1": "Punkt zbiórki #1",
+    "point2": "Centrum Eko",
+    "point3": "RecycleHub",
+    "address1": "ul. Przykładowa 123",
+    "address2": "ul. Zielona 45",
+    "address3": "ul. Centralna 78",
+    "kmAway": "{distance} km od Ciebie"
+  },
+  "login": {
+    "title": "Zaloguj się do swojego konta",
+    "email": "Email",
+    "emailPlaceholder": "twoj{'@'}email.com",
+    "password": "Hasło",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "Zapamiętaj mnie",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "signIn": "Zaloguj się",
+    "signingIn": "Logowanie...",
+    "error": "Nieprawidłowy email lub hasło, spróbuj ponownie",
+    "noAccount": "Nie masz konta?",
+    "signUp": "Zarejestruj się",
+    "backToHome": "← Powrót do strony głównej"
+  },
+  "footer": {
+    "description": "Czynimy recykling odpadów prostym i dostępnym dla wszystkich.",
+    "quickLinks": "Szybkie linki",
+    "contact": "Kontakt",
+    "rights": "© 2025 EcoPoint. Wszelkie prawa zastrzeżone."
   }
 }

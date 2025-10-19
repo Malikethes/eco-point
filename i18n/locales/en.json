@@ -1,10 +1,104 @@
 {
   "hello": "Hello!",
   "welcome": "Welcome to our app",
+  "message": "Message",
   "nav": {
     "home": "Home",
     "map": "Map",
     "about": "About",
     "contact": "Contact"
+  },
+  "home": {
+    "title": "EcoPoint",
+    "subtitle": "Scan QR codes and find the nearest recycling points. Together we make the world cleaner!",
+    "findPoint": "Find Recycling Point",
+    "learnMore": "Learn More",
+    "pointsMap": "Points Map",
+    "pointsMapDesc": "Find the nearest recycling collection point on an interactive map",
+    "qrScanning": "QR Scanning",
+    "qrScanningDesc": "Scan QR codes on packaging to get recycling information",
+    "ecoStats": "Eco-statistics",
+    "ecoStatsDesc": "See your positive impact on the environment over time"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "EcoPoint is an innovative platform for simplifying the waste recycling process",
+    "mission": "Our Mission",
+    "missionText": "We strive to make waste recycling simple and accessible for everyone. Our platform helps people find the nearest recycling points and get information about proper disposal of various materials.",
+    "ecoFriendly": "Eco-Friendly",
+    "ecoFriendlyDesc": "Help reduce waste in landfills and contribute to preserving natural resources",
+    "convenience": "Convenience",
+    "convenienceDesc": "Interactive map with up-to-date information about recycling points in your area",
+    "transparency": "Transparency",
+    "transparencyDesc": "Complete information about accepted material types and operating hours",
+    "community": "Community",
+    "communityDesc": "Join thousands of people who care about the environment",
+    "getStarted": "Get Started"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're happy to hear from you",
+    "sendMessage": "Send a Message",
+    "yourName": "Your Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "sendBtn": "Send Message",
+    "placeholders": {
+      "name": "John Doe",
+      "email": "your{'@'}email.com",
+      "message": "Your message..."
+    },
+    "dropdown": {
+      "select": "Select a subject",
+      "general": "General Inquiry",
+      "support": "Technical Support",
+      "partnership": "Partnership",
+      "other": "Other"
+    }
+  },
+  "map": {
+    "title": "Recycling Points Map",
+    "subtitle": "Find the nearest recycling collection point",
+    "searchByAddress": "Search by Address",
+    "searchPlaceholder": "Enter address or district name...",
+    "materialType": "Material Type",
+    "allTypes": "All Types",
+    "plastic": "Plastic",
+    "glass": "Glass",
+    "paper": "Paper",
+    "metal": "Metal",
+    "electronics": "Electronics",
+    "batteries": "Batteries",
+    "interactiveMap": "Interactive Map",
+    "mapPlaceholder": "Map with collection points will be displayed here",
+    "point1": "Collection Point #1",
+    "point2": "Eco Center",
+    "point3": "RecycleHub",
+    "address1": "123 Example St",
+    "address2": "45 Green Ave",
+    "address3": "78 Central St",
+    "kmAway": "{distance} km from you"
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "email": "Email",
+    "emailPlaceholder": "your{'@'}email.com",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signingIn": "Signing in...",
+    "error": "Wrong email or password, try again",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "backToHome": "← Back to Home"
+  },
+  "footer": {
+    "description": "Making waste recycling simple and accessible for everyone.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "rights": "© 2025 EcoPoint. All rights reserved."
   }
 }

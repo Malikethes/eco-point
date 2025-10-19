@@ -4,7 +4,7 @@
       <!-- Logo/Header -->
       <div class="text-center mb-8">
         <div class="text-6xl mb-4"><img src="assets/images/Logo_ecopoint_fully_transparent.png" alt="Ecopoint logo" class="mx-auto w-48 h-auto"></div>
-        <p class="text-gray-600 dark:text-gray-300">Sign in to your account</p>
+        <p class="text-gray-600 dark:text-gray-300">{{ $t('login.title') }}</p>
       </div>
 
       <!-- Login Form -->
@@ -12,12 +12,12 @@
         <form class="space-y-6" @submit.prevent="onSubmit">
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Email
+              {{ $t('login.email') }}
             </label>
             <input 
               v-model="email"
               type="email" 
-              placeholder="your@email.com"
+              :placeholder="$t('login.emailPlaceholder')"
               class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
               required
             >
@@ -25,12 +25,12 @@
 
           <div>
             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Password
+              {{ $t('login.password') }}
             </label>
             <input 
               v-model="password"
               type="password" 
-              placeholder="••••••••"
+              :placeholder="$t('login.passwordPlaceholder')"
               class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
               required
             >
@@ -39,10 +39,10 @@
           <div class="flex items-center justify-between">
             <label class="flex items-center">
               <input v-model="remember" type="checkbox" class="rounded text-indigo-600 focus:ring-indigo-500">
-              <span class="ml-2 text-sm text-gray-600 dark:text-gray-300">Remember me</span>
+              <span class="ml-2 text-sm text-gray-600 dark:text-gray-300">{{ $t('login.rememberMe') }}</span>
             </label>
             <NuxtLink to="#" class="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">
-              Forgot password?
+              {{ $t('login.forgotPassword') }}
             </NuxtLink>
           </div>
 
@@ -51,11 +51,11 @@
             class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 dark:from-indigo-500 dark:to-purple-500 dark:hover:from-indigo-600 dark:hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105"
             :disabled="loading"
           >
-            <span v-if="!loading">Sign In</span>
-            <span v-else>Signing in...</span>
+            <span v-if="!loading">{{ $t('login.signIn') }}</span>
+            <span v-else>{{ $t('login.signingIn') }}</span>
           </button>
 
-          <p v-if="error" class="text-sm text-red-600 dark:text-red-400 mt-2">Wrong email or password, try again</p>
+          <p v-if="error" class="text-sm text-red-600 dark:text-red-400 mt-2">{{ $t('login.error') }}</p>
         </form>
 
         <div class="mt-6">
@@ -67,9 +67,9 @@
         </div>
 
         <p class="mt-8 text-center text-sm text-gray-600 dark:text-gray-300">
-          Don't have an account? 
+          {{ $t('login.noAccount') }} 
           <NuxtLink to="/signup" class="font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">
-            Sign up
+            {{ $t('login.signUp') }}
           </NuxtLink>
         </p>
       </div>
@@ -80,7 +80,7 @@
           to="/" 
           class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition"
         >
-          ← Back to Home
+          {{ $t('login.backToHome') }}
         </NuxtLink>
       </div>
     </div>
