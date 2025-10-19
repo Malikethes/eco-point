@@ -103,7 +103,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useFirebaseStore } from '~/stores/firebaseStore';
+import { useFirebaseStore } from '~/stores/authStore';
 
 definePageMeta({ layout: 'auth' });
 
