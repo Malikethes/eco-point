@@ -103,90 +103,51 @@
 
 <script setup>
 import { ref } from 'vue';
-import useAuth from '~/composables/useAuth';
-import { doc, setDoc, serverTimestamp, collection, query, where, getDocs} from 'firebase/firestore';
-import { deleteUser } from 'firebase/auth';
+import { useFirebaseStore } from '~/stores/firebaseStore';
 
-definePageMeta({
-  layout: 'auth'
-});
+definePageMeta({ layout: 'auth' });
 
-const { register } = useAuth();
-const nuxt = useNuxtApp();
-const db = nuxt.$firebaseDb;
+const store = useFirebaseStore();
 
 const name = ref('');
 const username = ref('');
 const email = ref('');
 const password = ref('');
 const confirmPassword = ref('');
-const loading = ref(false);
+const loading = store.loading;
 const error = ref('');
 
 const defaultAchievementId = 'Zs3eHtAdt9FAzinOf8qx';
-const normalizeUsername = (raw) => raw.trim().toLowerCase().replace(/^@/, '');
-const isValidUsername = (u) => /^[a-z0-9._-]{3,30}$/.test(u);
-
-let cred = null;
 
 const onSubmit = async () => {
   error.value = '';
-  const uname = normalizeUsername(username.value);
-  if (!isValidUsername(uname)) {
-    error.value = 'Invalid username — 3–30 chars, letters, numbers, . _ - allowed';
-    return;
-  }
   if (password.value !== confirmPassword.value) {
     error.value = 'Passwords do not match';
     return;
   }
-  loading.value = true;
-  const storedUsername = uname;
-  const usersRef = collection(db, 'users');
-  const usernameQuery = query(usersRef, where('username', '==', storedUsername));
-
   try {
-    const usernameSnap = await getDocs(usernameQuery);
-    if (!usernameSnap.empty) {
-      error.value = 'Username already taken';
-      loading.value = false;
-      return;
-    }
-    
-    cred = await register(email.value, password.value);
-    const uid = cred.user.uid;
-
-    const post = await getDocs(usernameQuery);
-    if (!post.empty) {
-      try { await deleteUser(cred.user); } catch (err) { console.warn('deleteUser failed', err); }
-      await logout().catch(() => {});
-      error.value = 'Username already taken';
-      return;
-    }
-    const achievementRef = doc(db, 'achievements', defaultAchievementId);
-    await setDoc(doc(db, 'users', uid), {
-      name: name.value.trim(),
-      username: uname,
-      email: email.value.trim(),
-      achievements: [achievementRef],
-      currentMonthSessions: 0,
-      pointsBalance: 0,
-      pointsEarned: 0,
-      totalSessions: 0,
-      createdAt: serverTimestamp()
+    await store.signUp({
+      name: name.value,
+      username: username.value,
+      email: email.value,
+      password: password.value,
+      confirmPassword: confirmPassword.value,
+      defaultAchievementId
     });
-
     return navigateTo('/');
   } catch (e) {
-    console.error('signup error', e);
-    error.value = e?.code ? e.code.replace('auth/', '').replace(/-/g, ' ') : 'Signup failed';
-
-    if (cred?.user) {
-      try { await deleteUser(cred.user); } catch (err) { console.warn('deleteUser failed', err); }
-      await logout().catch(() => {});
+    console.error('signup', e);
+    switch (e.message){
+      case 'username-taken':
+        error.value = 'Username is already taken';
+        break;
+      case 'invalid-username':
+        error.value = 'Username is invalid. Only lowercase letters, numbers, dots, underscores and hyphens are allowed (3-30 characters).';
+        break;
+      default:
+        error.value = 'Sign up failed. Please try again.';
+        break;
     }
-  } finally {
-    loading.value = false;
   }
 };
 </script>

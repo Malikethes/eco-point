@@ -89,32 +89,25 @@
 
 <script setup>
 import { ref } from 'vue';
-import useAuth from '~/composables/useAuth';
+import { useFirebaseStore } from '~/stores/firebaseStore';
 
-definePageMeta({
-  layout: 'auth'
-});
+definePageMeta({ layout: 'auth' });
 
-const { login } = useAuth();
+const store = useFirebaseStore();
 const email = ref('');
 const password = ref('');
 const remember = ref(false);
-const loading = ref(false);
+const loading = store.loading;
 const error = ref('');
 
 const onSubmit = async () => {
-  loading.value = true;
   error.value = '';
   try {
-    await login(email.value, password.value);
-    // redirect after login
+    await store.signIn(email.value, password.value);
     return navigateTo('/');
   } catch (e) {
     console.error(e);
-    // Friendly message
-    error.value = e?.code ? e.code.replace('auth/', '').replace(/-/g, ' ') : 'Sign in failed';
-  } finally {
-    loading.value = false;
+    error.value = 'Sign in failed';
   }
 };
 </script>
