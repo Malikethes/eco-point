@@ -7,26 +7,28 @@ let initialized = false;
 
 export default function useAuth() {
   const nuxt = useNuxtApp();
-  const auth = nuxt.$firebaseAuth as Auth;
+  let auth = nuxt.$firebaseAuth as Auth | undefined;
 
   onMounted(() => {
-    if (import.meta.client && auth && !initialized) {
-      initialized = true;
-      onAuthStateChanged(auth, (u) => { user.value = u; });
-    }
+    auth = (useNuxtApp().$firebaseAuth as Auth | undefined) ?? auth;
+    if (initialized || !auth) return;
+    initialized = true;
+    onAuthStateChanged(auth, (u) => { user.value = u; });
   });
 
   const ensureAuth = () => {
-    if (import.meta.client || !auth) throw new Error('auth-not-ready');
-    return auth;
+    const a = (useNuxtApp().$firebaseAuth as Auth | undefined) ?? auth;
+    if (!a) throw new Error('auth-not-ready');
+    return a;
   };
 
 
   const login = (email: string, password: string) => signInWithEmailAndPassword(ensureAuth(), email, password);
   const register = (email: string, password: string) => createUserWithEmailAndPassword(ensureAuth(), email, password);
   const logout = async () => {
-    if (!auth) return;
-    await signOut(auth);
+    const a = (useNuxtApp().$firebaseAuth as Auth | undefined) ?? auth;
+    if (!a) return;
+    await signOut(a);
     user.value = null;
   };
 

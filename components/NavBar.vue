@@ -23,12 +23,6 @@
             {{ $t('nav.map') }}
           </NuxtLink>
           <NuxtLink 
-            to="/about" 
-            class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
-          >
-            {{ $t('nav.about') }}
-          </NuxtLink>
-          <NuxtLink 
             to="/contact" 
             class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
           >
@@ -41,16 +35,16 @@
           <!-- Language Switcher -->
           <div class="hidden sm:flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-0.5">
             <button 
-              @click="switchLocale('en')"
               :class="locale === 'en' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'hover:bg-gray-50 dark:hover:bg-gray-700'"
               class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 transition-all"
+              @click="switchLocale('en')"
             >
               EN
             </button>
             <button 
-              @click="switchLocale('pl')"
               :class="locale === 'pl' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'hover:bg-gray-50 dark:hover:bg-gray-700'"
               class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 transition-all"
+              @click="switchLocale('pl')"
             >
               PL
             </button>
@@ -58,16 +52,16 @@
           
           <!-- Dark Mode Toggle -->
           <button 
-            @click="toggleDarkMode" 
-            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all" 
             :title="colorMode.preference === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+            @click="toggleDarkMode"
           >
             <span v-if="colorMode.preference === 'dark'" class="text-xl">☀️</span>
             <span v-else class="text-xl">🌙</span>
           </button>
           
           <!-- Divider -->
-          <div class="hidden sm:block w-px h-8 bg-gray-300 dark:bg-gray-700"></div>
+          <div class="hidden sm:block w-px h-8 bg-gray-300 dark:bg-gray-700"/>
           
           <!-- User Section -->
           <div v-if="user" class="flex items-center gap-3">
@@ -76,8 +70,8 @@
               <span class="hidden lg:block text-sm font-medium text-gray-700 dark:text-gray-300">{{ displayName }}</span>
             </div>
             <button 
-              @click="handleSignOut"
               class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+              @click="handleSignOut"
             >
               Sign Out
             </button>
