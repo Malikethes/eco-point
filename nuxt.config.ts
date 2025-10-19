@@ -8,18 +8,30 @@ export default defineNuxtConfig({
     '@nuxt/eslint', 
     '@nuxtjs/tailwindcss', 
     '@pinia/nuxt',
+    '@nuxtjs/color-mode',
     '@nuxtjs/i18n'
   ],
   
-  // @ts-ignore - i18n types issue
+  colorMode: {
+    classSuffix: ''
+  },
+  
   i18n: {
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-      { code: 'pl', name: 'Polski', file: 'pl.json' }
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.json'
+      },
+      {
+        code: 'pl',
+        name: 'Polski',
+        file: 'pl.json'
+      }
     ],
-    defaultLocale: 'en',
     lazy: true,
-    langDir: 'i18n/locales',
+    langDir: 'locales',
+    defaultLocale: 'en',
     strategy: 'prefix_except_default'
   },
   
