@@ -104,7 +104,8 @@
 <script setup>
 import { ref } from 'vue';
 import useAuth from '~/composables/useAuth';
-import { runTransaction, setDoc, doc, serverTimestamp, getDoc, deleteDoc } from 'firebase/firestore';
+import { doc, setDoc, serverTimestamp, collection, query, where, getDocs} from 'firebase/firestore';
+import { deleteUser } from 'firebase/auth';
 
 definePageMeta({
   layout: 'auth'
@@ -125,6 +126,9 @@ const error = ref('');
 const defaultAchievementId = 'Zs3eHtAdt9FAzinOf8qx';
 const normalizeUsername = (raw) => raw.trim().toLowerCase().replace(/^@/, '');
 const isValidUsername = (u) => /^[a-z0-9._-]{3,30}$/.test(u);
+
+let cred = null;
+
 const onSubmit = async () => {
   error.value = '';
   const uname = normalizeUsername(username.value);
@@ -136,30 +140,30 @@ const onSubmit = async () => {
     error.value = 'Passwords do not match';
     return;
   }
-  if (!username.value.trim()) {
-    error.value = 'Please provide a username';
-    return;
-  }
   loading.value = true;
-  const usernameRef = doc(db, 'usernames', uname);
+  const storedUsername = uname;
+  const usersRef = collection(db, 'users');
+  const usernameQuery = query(usersRef, where('username', '==', storedUsername));
+
   try {
-    const usernameSnap = await getDoc(usernameRef);
-    if (usernameSnap.exists()) {
+    const usernameSnap = await getDocs(usernameQuery);
+    if (!usernameSnap.empty) {
       error.value = 'Username already taken';
       loading.value = false;
       return;
     }
     
-    const cred = await register(email.value, password.value);
+    cred = await register(email.value, password.value);
     const uid = cred.user.uid;
 
-    await runTransaction(db, async (tx) => {
-      const snap = await tx.get(usernameRef);
-      if (snap.exists()) throw new Error('username-taken');
-      tx.set(usernameRef, { uid, createdAt: serverTimestamp() });
-    });
+    const post = await getDocs(usernameQuery);
+    if (!post.empty) {
+      try { await deleteUser(cred.user); } catch (err) { console.warn('deleteUser failed', err); }
+      await logout().catch(() => {});
+      error.value = 'Username already taken';
+      return;
+    }
     const achievementRef = doc(db, 'achievements', defaultAchievementId);
-
     await setDoc(doc(db, 'users', uid), {
       name: name.value.trim(),
       username: uname,
@@ -174,19 +178,13 @@ const onSubmit = async () => {
 
     return navigateTo('/');
   } catch (e) {
-    console.error(e);
-    if (e.message === 'username-taken') {
-      error.value = 'Username already taken';
-    } else {
-      error.value = e?.code ? e.code.replace('auth/', '').replace(/-/g, ' ') : 'Signup failed';
-    }
+    console.error('signup error', e);
+    error.value = e?.code ? e.code.replace('auth/', '').replace(/-/g, ' ') : 'Signup failed';
 
-    try {
-      const finalSnap = await getDoc(usernameRef);
-      if (finalSnap.exists() && finalSnap.data().uid && cred && cred.user && finalSnap.data().uid === cred.user.uid) {
-        await deleteDoc(usernameRef);
-      }
-    } catch (err) { console.warn('cleanup failed', err); }
+    if (cred?.user) {
+      try { await deleteUser(cred.user); } catch (err) { console.warn('deleteUser failed', err); }
+      await logout().catch(() => {});
+    }
   } finally {
     loading.value = false;
   }
