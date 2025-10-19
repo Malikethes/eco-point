@@ -95,6 +95,30 @@
     "signUp": "Sign up",
     "backToHome": "← Back to Home"
   },
+  "signup": {
+    "title": "Create your account",
+    "subtitle": "Sign up to join EcoPoint",
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Jane Doe",
+    "username": "Username",
+    "usernamePlaceholder": "janedoe",
+    "email": "Email",
+    "emailPlaceholder": "you{'@'}email.com",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "repeatPassword": "Repeat password",
+    "signUpBtn": "Sign Up",
+    "creatingAccount": "Creating account...",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "backToHome": "← Back to Home",
+    "errors": {
+      "invalidUsername": "Invalid username — 3–30 chars, letters, numbers, . _ - allowed",
+      "passwordMismatch": "Passwords do not match",
+      "usernameTaken": "Username already taken",
+      "signupFailed": "Signup failed"
+    }
+  },
   "footer": {
     "description": "Making waste recycling simple and accessible for everyone.",
     "quickLinks": "Quick Links",

@@ -95,6 +95,30 @@
     "signUp": "Zarejestruj się",
     "backToHome": "← Powrót do strony głównej"
   },
+  "signup": {
+    "title": "Utwórz konto",
+    "subtitle": "Zarejestruj się, aby dołączyć do EcoPoint",
+    "fullName": "Pełna nazwa",
+    "fullNamePlaceholder": "Jan Kowalski",
+    "username": "Nazwa użytkownika",
+    "usernamePlaceholder": "jankowalski",
+    "email": "Email",
+    "emailPlaceholder": "ty{'@'}email.com",
+    "password": "Hasło",
+    "passwordPlaceholder": "••••••••",
+    "repeatPassword": "Powtórz hasło",
+    "signUpBtn": "Zarejestruj się",
+    "creatingAccount": "Tworzenie konta...",
+    "haveAccount": "Masz już konto?",
+    "signIn": "Zaloguj się",
+    "backToHome": "← Powrót do strony głównej",
+    "errors": {
+      "invalidUsername": "Nieprawidłowa nazwa użytkownika — 3–30 znaków, litery, cyfry, . _ - dozwolone",
+      "passwordMismatch": "Hasła nie pasują do siebie",
+      "usernameTaken": "Nazwa użytkownika jest już zajęta",
+      "signupFailed": "Rejestracja nie powiodła się"
+    }
+  },
   "footer": {
     "description": "Czynimy recykling odpadów prostym i dostępnym dla wszystkich.",
     "quickLinks": "Szybkie linki",
