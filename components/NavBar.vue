@@ -1,49 +1,96 @@
 <template>
-  <nav class="bg-white shadow-lg border-b border-gray-200">
+  <nav class="bg-white dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-700 transition-colors">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center space-x-2 hover:opacity-80 transition">
-          <span class="text-3xl"><img src="assets/images/Logo_ecopoint_fully_transparent_notext.png" alt="Ecopoint logo" class="mx-auto w-10 h-auto"></span>
+          <img src="assets/images/Logo_ecopoint_fully_transparent_notext.png" alt="Ecopoint logo" class="w-10 h-10">
           <span class="text-xl font-bold" style="color: #007337;">EcoPoint</span>
         </NuxtLink>
         
-        <!-- Navigation Links -->
-        <div class="hidden md:flex items-center space-x-1">
+        <!-- Center Navigation Links -->
+        <div class="hidden md:flex items-center space-x-2 absolute left-1/2 transform -translate-x-1/2">
           <NuxtLink 
             to="/" 
-            class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 font-medium transition"
+            class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
           >
-            Home
+            {{ $t('nav.home') }}
           </NuxtLink>
           <NuxtLink 
             to="/map" 
-            class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 font-medium transition"
+            class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
           >
-            Map
+            {{ $t('nav.map') }}
           </NuxtLink>
           <NuxtLink 
             to="/about" 
-            class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 font-medium transition"
+            class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
           >
-            About
+            {{ $t('nav.about') }}
           </NuxtLink>
           <NuxtLink 
             to="/contact" 
-            class="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 font-medium transition"
+            class="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
           >
-            Contact
+            {{ $t('nav.contact') }}
           </NuxtLink>
         </div>
 
-        <!-- Login Button -->
-        <div class="flex items-center space-x-3">
-          <div v-if="user" class="flex items-center space-x-3">
-            <img v-if="user.photoURL" :src="user.photoURL" alt="avatar" class="w-8 h-8 rounded-full object-cover">
-            <span class="text-gray-700 font-medium">{{ displayName }}</span>
-            <button class="ml-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition" @click="handleSignOut">Sign Out</button>
+        <!-- Right Side: Controls & Auth -->
+        <div class="flex items-center gap-2">
+          <!-- Language Switcher -->
+          <div class="hidden sm:flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-0.5">
+            <button 
+              @click="switchLocale('en')"
+              :class="locale === 'en' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'hover:bg-gray-50 dark:hover:bg-gray-700'"
+              class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 transition-all"
+            >
+              EN
+            </button>
+            <button 
+              @click="switchLocale('pl')"
+              :class="locale === 'pl' ? 'bg-white dark:bg-gray-700 shadow-sm' : 'hover:bg-gray-50 dark:hover:bg-gray-700'"
+              class="px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 transition-all"
+            >
+              PL
+            </button>
           </div>
-          <NuxtLink v-else to="/login" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-2 rounded-lg font-semibold shadow-md transition transform hover:scale-105">Sign In</NuxtLink>
+          
+          <!-- Dark Mode Toggle -->
+          <button 
+            @click="toggleDarkMode" 
+            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+            :title="colorMode.preference === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+          >
+            <span v-if="colorMode.preference === 'dark'" class="text-xl">☀️</span>
+            <span v-else class="text-xl">🌙</span>
+          </button>
+          
+          <!-- Divider -->
+          <div class="hidden sm:block w-px h-8 bg-gray-300 dark:bg-gray-700"></div>
+          
+          <!-- User Section -->
+          <div v-if="user" class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
+              <img v-if="user.photoURL" :src="user.photoURL" alt="avatar" class="w-9 h-9 rounded-full object-cover border-2 border-gray-200 dark:border-gray-700">
+              <span class="hidden lg:block text-sm font-medium text-gray-700 dark:text-gray-300">{{ displayName }}</span>
+            </div>
+            <button 
+              @click="handleSignOut"
+              class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            >
+              Sign Out
+            </button>
+          </div>
+          
+          <!-- Sign In Button -->
+          <NuxtLink 
+            v-else 
+            to="/login" 
+            class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-5 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transition-all"
+          >
+            Sign In
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -60,6 +107,17 @@ const router = useRouter();
 const nuxt = useNuxtApp();
 const db = nuxt.$firebaseDb;
 const firstName = ref('');
+
+const colorMode = useColorMode();
+const toggleDarkMode = () => {
+  colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark';
+};
+
+// i18n
+const { locale, setLocale } = useI18n();
+const switchLocale = (newLocale) => {
+  setLocale(newLocale);
+};
 
 watch(user, async (u) => {
   firstName.value = '';
