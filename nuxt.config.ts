@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/icon', '@nuxt/eslint', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/icon', '@nuxt/eslint', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
   runtimeConfig: {
     public: {
       firebaseApiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
@@ -12,5 +12,5 @@ export default defineNuxtConfig({
       firebaseMessagingSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
       firebaseAppId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID
     }
-  }
+  },
 })
