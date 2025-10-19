@@ -13,19 +13,19 @@
               <span class="text-xl font-bold" style="color: #007337;">EcoPoint</span>
             </div>
             <p class="text-gray-400">
-              Making waste collection simple and accessible for everyone.
+              {{ $t('footer.description') }}
             </p>
           </div>
           <div>
-            <h3 class="font-bold mb-4">Quick Links</h3>
+            <h3 class="font-bold mb-4">{{ $t('footer.quickLinks') }}</h3>
             <ul class="space-y-2 text-gray-400 dark:text-gray-500">
-              <li><NuxtLink to="/" class="hover:text-white transition">Home</NuxtLink></li>
-              <li><NuxtLink to="/map" class="hover:text-white transition">Map</NuxtLink></li>
-              <li><NuxtLink to="/contact" class="hover:text-white transition">Contact</NuxtLink></li>
+              <li><NuxtLink to="/" class="hover:text-white transition">{{ $t('nav.home') }}</NuxtLink></li>
+              <li><NuxtLink to="/map" class="hover:text-white transition">{{ $t('nav.map') }}</NuxtLink></li>
+              <li><NuxtLink to="/contact" class="hover:text-white transition">{{ $t('nav.contact') }}</NuxtLink></li>
             </ul>
           </div>
           <div>
-            <h3 class="font-bold mb-4">Contact</h3>
+            <h3 class="font-bold mb-4">{{ $t('footer.contact') }}</h3>
             <ul class="space-y-2 text-gray-400">
               <li>📧 betterthannever.business@gmail.com</li>
               <li>📱 +48 123 456 789</li>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 EcoPoint. All rights reserved.</p>
+          <p>{{ $t('footer.rights') }}</p>
         </div>
       </div>
     </footer>
