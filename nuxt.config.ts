@@ -1,8 +1,28 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
+  ssr: false,
   devtools: { enabled: true },
-  modules: ['@nuxt/icon', '@nuxt/eslint', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  modules: [
+    '@nuxt/icon', 
+    '@nuxt/eslint', 
+    '@nuxtjs/tailwindcss', 
+    '@pinia/nuxt',
+    '@nuxtjs/i18n'
+  ],
+  
+  // @ts-ignore - i18n types issue
+  i18n: {
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'pl', name: 'Polski', file: 'pl.json' }
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: 'i18n/locales',
+    strategy: 'prefix_except_default'
+  },
+  
   runtimeConfig: {
     public: {
       firebaseApiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
@@ -12,5 +32,5 @@ export default defineNuxtConfig({
       firebaseMessagingSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
       firebaseAppId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID
     }
-  },
+  }
 })
