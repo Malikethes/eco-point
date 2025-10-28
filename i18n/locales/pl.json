@@ -214,5 +214,28 @@
     "ecoRanking": "Eko-Ranking",
     "pts": "pkt",
     "you": "Ty"
+  },
+  "portal": {
+    "title": "Portal EcoPoint",
+    "subtitle": "System zarządzania odpadami i współpracy z lokalnym biznesem",
+    "employeePortal": "Portal Pracownika",
+    "employeeDescription": "System dla służb miejskich i zarządzania operacjami",
+    "employeeFeature1": "Monitoring w czasie rzeczywistym poziomów zapełnienia koszy",
+    "employeeFeature2": "Optymalizacja tras odbioru i redukcja emisji CO₂",
+    "employeeFeature3": "Analityka zarządzania surowcami i segregacji",
+    "goToEmployeePortal": "Przejdź do portalu pracownika",
+    "businessPortal": "Portal Biznesu",
+    "businessDescription": "System dla lokalnych przedsiębiorstw i partnerów",
+    "businessFeature1": "Tworzenie i zarządzanie ofertami promocyjnymi",
+    "businessFeature2": "Monitorowanie wykorzystania ofert i statystyki kampanii",
+    "businessFeature3": "Wzrost rozpoznawalności marki i nowych klientów",
+    "goToBusinessPortal": "Przejdź do portalu biznesu",
+    "ecosystemBenefits": "Korzyści ekosystemu EcoPoint",
+    "ecology": "Ekologia",
+    "ecologyDescription": "Redukcja emisji CO₂ i optymalizacja gospodarki odpadami",
+    "social": "Społeczność",
+    "socialDescription": "Zaangażowanie mieszkańców w życie miasta i edukacja ekologiczna",
+    "economy": "Gospodarka",
+    "economyDescription": "Wsparcie lokalnego biznesu i rozwój gospodarki cyrkularnej"
   }
 }

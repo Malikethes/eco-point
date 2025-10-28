@@ -214,5 +214,28 @@
     "ecoRanking": "Eco-Ranking",
     "pts": "pts",
     "you": "You"
+  },
+  "portal": {
+    "title": "Portal EcoPoint",
+    "subtitle": "Waste management system and cooperation with local businesses",
+    "employeePortal": "Employee Portal",
+    "employeeDescription": "System for municipal services and operations management",
+    "employeeFeature1": "Real-time monitoring of fill levels to ensure timely emptying",
+    "employeeFeature2": "Route optimization for waste collection and CO₂ emission reduction",
+    "employeeFeature3": "Raw material management analysis and segregation",
+    "goToEmployeePortal": "Go to employee portal",
+    "businessPortal": "Business Portal",
+    "businessDescription": "System for local businesses and partners",
+    "businessFeature1": "Creation and management of promotional offers",
+    "businessFeature2": "Monitoring offer usage and campaign statistics",
+    "businessFeature3": "Increased brand recognition and new customers",
+    "goToBusinessPortal": "Go to business portal",
+    "ecosystemBenefits": "EcoPoint Ecosystem Benefits",
+    "ecology": "Ecology",
+    "ecologyDescription": "Reducing CO₂ emissions and optimizing waste management",
+    "social": "Social",
+    "socialDescription": "Engaging residents in city life and ecological education",
+    "economy": "Economy",
+    "economyDescription": "Supporting local businesses and developing a circular economy"
   }
 }
