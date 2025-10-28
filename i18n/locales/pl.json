@@ -196,5 +196,23 @@
     "rights": "© 2025 EcoPoint. Wszelkie prawa zastrzeżone.",
     "tagline": "Budujemy zrównoważoną przyszłość.",
     "copyright": "© 2024 EcoPoint - Zespół Better Than Never. Budujemy zrównoważoną przyszłość."
+  },
+  "profile": {
+    "title": "Mój Profil",
+    "subtitle": "Śledź swoją podróż recyklingową i wpływ na środowisko",
+    "totalPoints": "Łączne Punkty",
+    "globalRank": "Globalny Ranking",
+    "itemsRecycled": "Przedmioty Poddane Recyklingowi",
+    "co2Saved": "CO₂ Zaoszczędzone",
+    "environmentalImpact": "Twój Wpływ Na Środowisko",
+    "co2EmissionsSaved": "Emisje CO₂ Zaoszczędzone",
+    "treesEquivalent": "Równoważne {count} posadzonym drzewom",
+    "recyclingGoal": "Cel Recyklingu",
+    "items": "przedmiotów",
+    "keepGoing": "Tak trzymaj! Robisz prawdziwą różnicę",
+    "monthlyActivity": "Miesięczna Aktywność",
+    "ecoRanking": "Eko-Ranking",
+    "pts": "pkt",
+    "you": "Ty"
   }
 }
