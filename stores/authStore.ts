@@ -101,6 +101,7 @@ export const useFirebaseStore = defineStore('firebase', () => {
         username: uname,
         email: email.trim(),
         achievements: defaultAchievementId ? [doc(db, 'achievements', defaultAchievementId)] : [],
+        rewards: [],
         currentMonthSessions: 0,
         pointsBalance: 0,
         pointsEarned: 0,
