@@ -81,18 +81,18 @@
     "getStarted": "Get Started"
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "We're happy to hear from you",
-    "sendMessage": "Send a Message",
-    "yourName": "Your Name",
+    "title": "Get in Touch",
+    "subtitle": "Have questions about EcoPoint? Want to partner with us? We'd love to hear from you!",
+    "sendMessage": "Send Us a Message",
+    "yourName": "Name",
     "email": "Email",
     "subject": "Subject",
     "message": "Message",
     "sendBtn": "Send Message",
     "placeholders": {
-      "name": "John Doe",
+      "name": "Your name",
       "email": "your{'@'}email.com",
-      "message": "Your message..."
+      "message": "Tell us how we can help..."
     },
     "dropdown": {
       "select": "Select a subject",
@@ -100,7 +100,18 @@
       "support": "Technical Support",
       "partnership": "Partnership",
       "other": "Other"
-    }
+    },
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "visitUs": "Visit Us",
+    "workingHours": "Mon-Fri, 9am-6pm EST",
+    "partnershipTitle": "Partnership Opportunities",
+    "partnershipDesc": "Interested in bringing EcoPoint to your city or business? Let's discuss how we can work together to create a more sustainable future.",
+    "learnPartnerships": "Learn About Partnerships",
+    "teamTitle": "Meet the Better Than Never Team",
+    "teamSubtitle": "Passionate innovators working to make recycling rewarding and accessible for everyone",
+    "missionTitle": "Our Mission",
+    "missionDesc": "At EcoPoint, we believe that technology and gamification can transform how cities approach waste management. Our mission is to make recycling accessible, rewarding, and fun while creating measurable environmental impact. Together with communities, businesses, and local governments, we're building the sustainable cities of tomorrow."
   },
   "map": {
     "title": "EcoPoint Locations",

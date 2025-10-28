@@ -81,18 +81,18 @@
     "getStarted": "Rozpocznij"
   },
   "contact": {
-    "title": "Skontaktuj się z nami",
-    "subtitle": "Chętnie wysłuchamy Twoich pytań",
-    "sendMessage": "Wyślij wiadomość",
-    "yourName": "Twoje imię",
+    "title": "Skontaktuj Się",
+    "subtitle": "Masz pytania dotyczące EcoPoint? Chcesz z nami współpracować? Chętnie Cię wysłuchamy!",
+    "sendMessage": "Wyślij Nam Wiadomość",
+    "yourName": "Imię",
     "email": "Email",
     "subject": "Temat",
     "message": "Wiadomość",
-    "sendBtn": "Wyślij wiadomość",
+    "sendBtn": "Wyślij Wiadomość",
     "placeholders": {
-      "name": "Jan Kowalski",
+      "name": "Twoje imię",
       "email": "twoj{'@'}email.com",
-      "message": "Twoja wiadomość..."
+      "message": "Powiedz nam, jak możemy pomóc..."
     },
     "dropdown": {
       "select": "Wybierz temat",
@@ -100,7 +100,18 @@
       "support": "Wsparcie techniczne",
       "partnership": "Partnerstwo",
       "other": "Inne"
-    }
+    },
+    "emailUs": "Napisz Do Nas",
+    "callUs": "Zadzwoń Do Nas",
+    "visitUs": "Odwiedź Nas",
+    "workingHours": "Pon-Pt, 9:00-18:00",
+    "partnershipTitle": "Możliwości Partnerstwa",
+    "partnershipDesc": "Zainteresowany wprowadzeniem EcoPoint do swojego miasta lub firmy? Porozmawiajmy, jak możemy współpracować, aby stworzyć bardziej zrównoważoną przyszłość.",
+    "learnPartnerships": "Dowiedz Się O Partnerstwie",
+    "teamTitle": "Poznaj Zespół Better Than Never",
+    "teamSubtitle": "Pasjonaci innowacji pracujący nad tym, aby recykling był satysfakcjonujący i dostępny dla wszystkich",
+    "missionTitle": "Nasza Misja",
+    "missionDesc": "W EcoPoint wierzymy, że technologia i grywalizacja mogą zmienić podejście miast do gospodarki odpadami. Naszą misją jest uczynienie recyklingu dostępnym, satysfakcjonującym i zabawnym, jednocześnie tworząc mierzalny wpływ na środowisko. Razem ze społecznościami, firmami i samorządami budujemy zrównoważone miasta przyszłości."
   },
   "map": {
     "title": "Lokalizacje EcoPoint",
