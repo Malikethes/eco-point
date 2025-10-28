@@ -1,10 +1,12 @@
 export interface User {
     created: Date
-    monthSession: number
+    currentMonthSessions: number
     email: string
     name: string
     username: string
     pointsBalance: number
     pointsEarned: number
     totalSessions: number
+    rewards?: string[]
+    achievements?: string[]
 }
