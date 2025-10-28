@@ -1,4 +1,4 @@
-export interface User {
+export interface Offer {
     brand: string
     expires: Date
     description: string

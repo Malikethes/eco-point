@@ -1,6 +1,8 @@
-export interface User {
-    description: string
+export interface Location {
+    id?: string
+    address: string
     name: string
-    latitude: string
-    longitude: string
+    latitude: number
+    longitude: number
+    materials?: string[]
 }

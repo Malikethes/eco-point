@@ -1,4 +1,4 @@
-export interface User {
+export interface Achievement {
     description: string
     name: string
 }
