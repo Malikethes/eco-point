@@ -28,10 +28,10 @@ onMounted(() => {
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400 bg-clip-text text-transparent mb-4">
+        <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400 bg-clip-text text-transparent mb-4 leading-tight pb-2">
           {{ $t('map.title') }}
         </h1>
-        <p class="text-lg text-gray-600 dark:text-gray-300">
+        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
           {{ $t('map.subtitle') }}
         </p>
       </div>

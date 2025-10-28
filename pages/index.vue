@@ -4,12 +4,12 @@
     <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="text-center space-y-8 max-w-4xl mx-auto">
         <div class="inline-flex items-center justify-center p-4 mb-6">
-          <img src="/assets/images/Logo_ecopoint_fully_transparent.png" alt="EcoPoint Logo" class="h-48 md:h-56 w-auto">
+          <img src="/assets/images/Logo_ecopoint_transparent.png" alt="EcoPoint Logo" class="h-48 md:h-56 w-auto">
         </div>
-        <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4 leading-tight pb-2">
           {{ $t('home.heroTitle') }}
         </h1>
-        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
           {{ $t('home.heroSubtitle') }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -170,7 +170,7 @@
         </div>
         
         <!-- Title -->
-        <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 dark:from-green-400 dark:via-blue-400 dark:to-purple-400 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 dark:from-green-400 dark:via-blue-400 dark:to-purple-400 leading-tight pb-2">
           {{ $t('home.ctaTitle') }}
         </h2>
         
