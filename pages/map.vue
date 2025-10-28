@@ -66,6 +66,7 @@ onMounted(() => {
               v-if="!loading && locations.length > 0" 
               :locations="locations"
               :selected-location="selectedLocation"
+              :selected-material="selectedFilter.toLowerCase()"
               class="h-full w-full"
             />
             <div v-else-if="loading" class="h-full flex items-center justify-center">

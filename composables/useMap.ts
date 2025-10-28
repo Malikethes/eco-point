@@ -103,7 +103,7 @@ export const useMap = () => {
     clearMarkers();
 
     const filteredLocations = locations.filter(loc => {
-      if (!selectedMaterial || selectedMaterial === 'allTypes') {
+      if (!selectedMaterial || selectedMaterial === 'all' || selectedMaterial === 'allTypes') {
         return true;
       }
       return loc.materials?.some(m => 
