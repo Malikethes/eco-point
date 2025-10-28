@@ -1,7 +1,7 @@
 export default defineNuxtPlugin((nuxtApp) => {
-  const i18n = nuxtApp.$i18n as any;
+  const i18n = nuxtApp.$i18n as { setLocale: (locale: string) => void };
   
-  if (process.client) {
+  if (import.meta.client) {
     const savedLocale = localStorage.getItem('locale');
     
     if (savedLocale && (savedLocale === 'en' || savedLocale === 'pl')) {

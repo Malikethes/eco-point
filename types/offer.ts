@@ -1,6 +1,6 @@
 export interface User {
-    brand: String
+    brand: string
     expires: Date
-    description: String
-    points: Number
+    description: string
+    points: number
 }
