@@ -32,47 +32,47 @@
     </section>
 
     <!-- How It Works Section -->
-    <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-white dark:bg-gray-800 transition-colors">
+    <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-white dark:bg-gray-900 transition-colors">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ $t('home.howItWorks') }}</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300">{{ $t('home.howItWorksSubtitle') }}</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400">{{ $t('home.howItWorksSubtitle') }}</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         <!-- Step 1 -->
-        <div class="bg-white dark:bg-gray-700 border-2 border-green-100 dark:border-green-900 hover:border-green-300 dark:hover:border-green-600 rounded-xl p-8 text-center space-y-4 transition-all hover:shadow-lg">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900">
+        <div class="bg-white dark:bg-gray-800 border-2 border-green-100 dark:border-green-800 hover:border-green-300 dark:hover:border-green-500 rounded-xl p-8 text-center space-y-4 transition-all hover:shadow-lg dark:hover:shadow-green-900/50">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/50">
             <QrCode :size="32" class="text-green-600 dark:text-green-400" />
           </div>
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ $t('home.step1Title') }}</h3>
-          <p class="text-gray-600 dark:text-gray-300">{{ $t('home.step1Desc') }}</p>
+          <p class="text-gray-600 dark:text-gray-400">{{ $t('home.step1Desc') }}</p>
         </div>
 
         <!-- Step 2 -->
-        <div class="bg-white dark:bg-gray-700 border-2 border-blue-100 dark:border-blue-900 hover:border-blue-300 dark:hover:border-blue-600 rounded-xl p-8 text-center space-y-4 transition-all hover:shadow-lg">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900">
+        <div class="bg-white dark:bg-gray-800 border-2 border-blue-100 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-500 rounded-xl p-8 text-center space-y-4 transition-all hover:shadow-lg dark:hover:shadow-blue-900/50">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/50">
             <Trash2 :size="32" class="text-blue-600 dark:text-blue-400" />
           </div>
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ $t('home.step2Title') }}</h3>
-          <p class="text-gray-600 dark:text-gray-300">{{ $t('home.step2Desc') }}</p>
+          <p class="text-gray-600 dark:text-gray-400">{{ $t('home.step2Desc') }}</p>
         </div>
 
         <!-- Step 3 -->
-        <div class="bg-white dark:bg-gray-700 border-2 border-green-100 dark:border-green-900 hover:border-green-300 dark:hover:border-green-600 rounded-xl p-8 text-center space-y-4 transition-all hover:shadow-lg">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900">
+        <div class="bg-white dark:bg-gray-800 border-2 border-green-100 dark:border-green-800 hover:border-green-300 dark:hover:border-green-500 rounded-xl p-8 text-center space-y-4 transition-all hover:shadow-lg dark:hover:shadow-green-900/50">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/50">
             <Coins :size="32" class="text-green-600 dark:text-green-400" />
           </div>
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ $t('home.step3Title') }}</h3>
-          <p class="text-gray-600 dark:text-gray-300">{{ $t('home.step3Desc') }}</p>
+          <p class="text-gray-600 dark:text-gray-400">{{ $t('home.step3Desc') }}</p>
         </div>
 
         <!-- Step 4 -->
-        <div class="bg-white dark:bg-gray-700 border-2 border-blue-100 dark:border-blue-900 hover:border-blue-300 dark:hover:border-blue-600 rounded-xl p-8 text-center space-y-4 transition-all hover:shadow-lg">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900">
+        <div class="bg-white dark:bg-gray-800 border-2 border-blue-100 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-500 rounded-xl p-8 text-center space-y-4 transition-all hover:shadow-lg dark:hover:shadow-blue-900/50">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/50">
             <Gift :size="32" class="text-blue-600 dark:text-blue-400" />
           </div>
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ $t('home.step4Title') }}</h3>
-          <p class="text-gray-600 dark:text-gray-300">{{ $t('home.step4Desc') }}</p>
+          <p class="text-gray-600 dark:text-gray-400">{{ $t('home.step4Desc') }}</p>
         </div>
       </div>
     </section>
@@ -81,17 +81,17 @@
     <section id="about" class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-b from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 transition-colors">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ $t('home.whyEcoPoint') }}</h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300">{{ $t('home.whySubtitle') }}</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400">{{ $t('home.whySubtitle') }}</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- For Residents -->
-        <div class="bg-white/80 dark:bg-gray-700/80 backdrop-blur rounded-xl shadow-lg hover:shadow-xl p-8 space-y-4 transition-all">
-          <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-green-500 to-green-600">
+        <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-xl shadow-lg hover:shadow-xl dark:shadow-green-900/20 dark:hover:shadow-green-800/40 p-8 space-y-4 transition-all border border-transparent dark:border-gray-700">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-green-500 to-green-600 shadow-lg">
             <Users :size="28" class="text-white" />
           </div>
           <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ $t('home.forResidents') }}</h3>
-          <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+          <ul class="space-y-3 text-gray-600 dark:text-gray-400">
             <li class="flex items-start">
               <Sparkles :size="20" class="text-green-500 dark:text-green-400 mr-2 mt-0.5 flex-shrink-0" />
               <span>{{ $t('home.residentsFeature1') }}</span>
@@ -112,12 +112,12 @@
         </div>
 
         <!-- For Businesses -->
-        <div class="bg-white/80 dark:bg-gray-700/80 backdrop-blur rounded-xl shadow-lg hover:shadow-xl p-8 space-y-4 transition-all">
-          <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-blue-600">
+        <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-xl shadow-lg hover:shadow-xl dark:shadow-blue-900/20 dark:hover:shadow-blue-800/40 p-8 space-y-4 transition-all border border-transparent dark:border-gray-700">
+          <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
             <Building2 :size="28" class="text-white" />
           </div>
           <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ $t('home.forBusinesses') }}</h3>
-          <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+          <ul class="space-y-3 text-gray-600 dark:text-gray-400">
             <li class="flex items-start">
               <Sparkles :size="20" class="text-blue-500 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
               <span>{{ $t('home.businessFeature1') }}</span>
@@ -140,12 +140,12 @@
 
       <!-- Smart City Impact -->
       <div class="mt-12 text-center">
-        <div class="max-w-3xl mx-auto bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl shadow-xl p-8">
+        <div class="max-w-3xl mx-auto bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl shadow-xl dark:shadow-2xl p-8">
           <div class="flex justify-center mb-4">
-            <TrendingUp :size="48" class="text-white" />
+            <TrendingUp :size="48" class="text-white drop-shadow-lg" />
           </div>
           <h3 class="text-2xl font-bold mb-4">{{ $t('home.smartCityImpact') }}</h3>
-          <p class="text-lg text-green-50">
+          <p class="text-lg text-green-50 dark:text-white/90">
             {{ $t('home.smartCityDesc') }}
           </p>
         </div>
@@ -153,13 +153,13 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center overflow-hidden">
+    <section class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 mb-12 text-center overflow-hidden">
       <!-- Background Gradient -->
-      <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 via-blue-500/10 to-purple-500/10 dark:from-green-500/5 dark:via-blue-500/5 dark:to-purple-500/5"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 via-blue-500/10 to-purple-500/10 dark:from-green-500/20 dark:via-blue-500/20 dark:to-purple-500/20"></div>
       
       <!-- Decorative Elements -->
-      <div class="absolute top-0 left-0 w-64 h-64 bg-green-400/10 dark:bg-green-400/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      <div class="absolute top-0 left-0 w-64 h-64 bg-green-400/10 dark:bg-green-400/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-400/10 dark:bg-blue-400/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
       
       <div class="relative max-w-4xl mx-auto space-y-8">
         <!-- Icon -->

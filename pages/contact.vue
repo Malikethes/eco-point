@@ -152,13 +152,6 @@
         </p>
       </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 mt-20">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-gray-400">{{ $t('footer.copyright') }}</p>
-      </div>
-    </footer>
   </div>
 </template>
 

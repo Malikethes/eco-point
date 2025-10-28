@@ -60,7 +60,7 @@ onMounted(() => {
 
       <!-- Map Placeholder -->
       <div class="mb-8 overflow-hidden rounded-2xl shadow-xl map-container">
-        <div class="relative h-[600px] lg:h-[700px] bg-gradient-to-br from-green-100 via-blue-100 to-green-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800">
+        <div class="relative h-[400px] lg:h-[500px] bg-gradient-to-br from-green-100 via-blue-100 to-green-100 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800">
           <ClientOnly>
             <LocationsMap 
               v-if="!loading && locations.length > 0" 
