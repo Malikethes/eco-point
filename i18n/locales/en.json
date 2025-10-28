@@ -210,6 +210,8 @@
     "totalSessions": "Total Sessions",
     "monthSessions": "Month Sessions",
     "achievements": "Achievements",
+    "achievementsTitle": "Your Achievements",
+    "noAchievements": "No achievements yet. Keep recycling!",
     "rewards": "Rewards",
     "globalRank": "Global Rank",
     "itemsRecycled": "Items Recycled",

@@ -11,6 +11,7 @@ import {
   where
 } from 'firebase/firestore';
 import type { User } from '~/types/user';
+import type { Achievement } from '~/types/achievement';
 
 export const useStatisticsStore = defineStore('statistics', () => {
   const nuxt = useNuxtApp();
@@ -20,6 +21,7 @@ export const useStatisticsStore = defineStore('statistics', () => {
   const globalRank = ref(0);
   const topUsers = ref<any[]>([]);
   const monthlyActivity = ref<any[]>([]);
+  const userAchievements = ref<Achievement[]>([]);
   const loading = ref(false);
   const error = ref<string | null>(null);
 
@@ -141,27 +143,50 @@ export const useStatisticsStore = defineStore('statistics', () => {
     }
   };
 
-  // Fetch monthly activity
-  const fetchMonthlyActivity = async () => {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const currentMonth = new Date().getMonth();
-    
-    monthlyActivity.value = months.slice(Math.max(0, currentMonth - 2), currentMonth + 1).map(month => ({
-      name: month,
-      items: Math.floor(Math.random() * 60) + 20
-    }));
 
-    if (userStats.value?.currentMonthSessions) {
-      monthlyActivity.value[monthlyActivity.value.length - 1].items = userStats.value.currentMonthSessions;
+  const fetchUserAchievements = async () => {
+    if (!userStats.value?.achievements || userStats.value.achievements.length === 0) {
+      userAchievements.value = [];
+      return;
+    }
+
+    try {
+      const achievementPromises = userStats.value.achievements.map(async (achievementRef: any) => {
+        let achievementId = achievementRef;
+        
+        if (achievementRef && typeof achievementRef === 'object' && achievementRef.path) {
+          const parts = achievementRef.path.split('/');
+          achievementId = parts[parts.length - 1];
+        }
+        else if (typeof achievementRef === 'string' && achievementRef.includes('/')) {
+          const parts = achievementRef.split('/');
+          achievementId = parts[parts.length - 1];
+        }
+        
+        console.log('Fetching achievement:', achievementId, 'from ref:', achievementRef);
+        const achievementDoc = await getDoc(doc(db, 'achievements', achievementId));
+        
+        if (achievementDoc.exists()) {
+          console.log('Achievement found:', achievementDoc.data());
+          return achievementDoc.data() as Achievement;
+        }
+        console.log('Achievement not found:', achievementId);
+        return null;
+      });
+
+      const results = await Promise.all(achievementPromises);
+      userAchievements.value = results.filter((a): a is Achievement => a !== null);
+      console.log('Total achievements loaded:', userAchievements.value.length);
+    } catch (e: any) {
+      console.error('Error fetching achievements:', e);
+      userAchievements.value = [];
     }
   };
 
   const loadUserData = async (userId: string) => {
     await fetchUserStats(userId);
-    await Promise.all([
-      fetchGlobalRanking(userId),
-      fetchMonthlyActivity()
-    ]);
+    await fetchGlobalRanking(userId);
+    await fetchUserAchievements();
   };
 
   const reset = () => {
@@ -169,6 +194,7 @@ export const useStatisticsStore = defineStore('statistics', () => {
     globalRank.value = 0;
     topUsers.value = [];
     monthlyActivity.value = [];
+    userAchievements.value = [];
     loading.value = false;
     error.value = null;
   };
@@ -179,6 +205,7 @@ export const useStatisticsStore = defineStore('statistics', () => {
     globalRank,
     topUsers,
     monthlyActivity,
+    userAchievements,
     loading,
     error,
 
@@ -196,7 +223,7 @@ export const useStatisticsStore = defineStore('statistics', () => {
     // Actions
     fetchUserStats,
     fetchGlobalRanking,
-    fetchMonthlyActivity,
+    fetchUserAchievements,
     loadUserData,
     reset
   };

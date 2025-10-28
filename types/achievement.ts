@@ -1,4 +1,6 @@
 export interface Achievement {
-    description: string
-    name: string
+    descriptionPL: string
+    namePL: string
+    descriptionEN: string
+    nameEN: string
 }

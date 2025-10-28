@@ -210,6 +210,8 @@
     "totalSessions": "Łączne Sesje",
     "monthSessions": "Sesje w Miesiącu",
     "achievements": "Osiągnięcia",
+    "achievementsTitle": "Twoje Osiągnięcia",
+    "noAchievements": "Brak osiągnięć. Kontynuuj recykling!",
     "rewards": "Nagrody",
     "globalRank": "Globalny Ranking",
     "itemsRecycled": "Przedmioty Poddane Recyklingowi",

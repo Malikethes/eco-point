@@ -141,22 +141,37 @@
             </div>
           </div>
 
-          <!-- Monthly Activity -->
+          <!-- Achievements Section -->
           <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border-2 border-gray-100 dark:border-gray-700 transition-colors">
             <div class="flex items-center gap-2 mb-6">
-              <Calendar :size="24" class="text-blue-600 dark:text-blue-400" />
-              <h2 class="text-2xl font-bold text-gray-900 dark:text-white leading-tight">{{ $t('profile.monthlyActivity') }}</h2>
+              <Award :size="24" class="text-pink-600 dark:text-pink-400" />
+              <h2 class="text-2xl font-bold text-gray-900 dark:text-white leading-tight">{{ $t('profile.achievementsTitle') }}</h2>
             </div>
 
-            <div class="space-y-4">
-              <ProgressBar
-                v-for="(month, index) in statisticsStore.monthlyActivity"
+            <div v-if="statisticsStore.userAchievements.length === 0" class="text-center py-8 text-gray-500 dark:text-gray-400">
+              {{ $t('profile.noAchievements') }}
+            </div>
+
+            <div v-else class="space-y-4">
+              <div
+                v-for="(achievement, index) in statisticsStore.userAchievements"
                 :key="index"
-                :label="month.name"
-                :value="month.items"
-                :max="60"
-                color="gray"
-              />
+                class="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 border border-pink-200 dark:border-pink-800 rounded-xl p-4 transition-all hover:shadow-md"
+              >
+                <div class="flex items-start gap-3">
+                  <div class="bg-pink-500 text-white rounded-lg p-2 flex-shrink-0">
+                    <Award :size="20" />
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1 leading-tight">
+                      {{ $i18n.locale === 'pl' ? achievement.namePL : achievement.nameEN }}
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-tight">
+                      {{ $i18n.locale === 'pl' ? achievement.descriptionPL : achievement.descriptionEN }}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
