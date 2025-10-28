@@ -6,7 +6,10 @@
     "home": "Home",
     "map": "Map",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign Out"
   },
   "home": {
     "title": "EcoPoint",

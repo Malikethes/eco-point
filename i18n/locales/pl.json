@@ -6,7 +6,10 @@
     "home": "Strona główna",
     "map": "Mapa",
     "about": "O nas",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "profile": "Profil",
+    "settings": "Ustawienia",
+    "signOut": "Wyloguj się"
   },
   "home": {
     "title": "EcoPoint",
