@@ -1,4 +1,4 @@
 export interface User {
-    description: String
-    name: String
+    description: string
+    name: string
 }

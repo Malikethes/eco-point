@@ -1,6 +1,6 @@
 export interface User {
-    description: String
-    name: String
-    latitude: String
-    longtitude: String
+    description: string
+    name: string
+    latitude: string
+    longitude: string
 }

@@ -25,37 +25,11 @@
         </div>
       </div>
 
-      <!-- Features Section -->
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 hover:shadow-2xl transition">
-          <div class="text-4xl mb-4">🗺️</div>
-          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.pointsMap') }}</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            {{ $t('home.pointsMapDesc') }}
-          </p>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 hover:shadow-2xl transition">
-          <div class="text-4xl mb-4">📱</div>
-          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.qrScanning') }}</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            {{ $t('home.qrScanningDesc') }}
-          </p>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 hover:shadow-2xl transition">
-          <div class="text-4xl mb-4">🌱</div>
-          <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.ecoStats') }}</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            {{ $t('home.ecoStatsDesc') }}
-          </p>
-        </div>
-      </div>
       <!-- Divider -->
       <div class="border-t border-gray-300 dark:border-gray-700 my-16"/>
 
       <!-- About Section -->
-      <section id="about" class="max-w-5xl mx-auto">
+      <section id="about" class="max-w-5xl mx-auto mb-16">
         <div class="text-center mb-12">
           <h2 class="text-5xl font-bold text-gray-900 dark:text-white mb-4">{{ $t('about.title') }}</h2>
           <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -124,17 +98,154 @@
             </div>
           </div>
         </div>
-
-        <!-- CTA -->
-        <div class="text-center">
-          <NuxtLink 
-            to="/map" 
-            class="inline-block bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white font-semibold py-4 px-10 rounded-lg shadow-lg transition transform hover:scale-105"
-          >
-            {{ $t('about.getStarted') }} →
-          </NuxtLink>
-        </div>
       </section>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-300 dark:border-gray-700 my-16"/>
+
+      <!-- How It Works Section -->
+      <div class="mb-16">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-3">{{ $t('home.howItWorks') }}</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300">{{ $t('home.howItWorksSubtitle') }}</p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Step 1 -->
+            <div class="text-center">
+              <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                1
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{{ $t('home.step1Title') }}</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">{{ $t('home.step1Desc') }}</p>
+              <div class="flex flex-col gap-2">
+                <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {{ $t('home.step1Download') }} →
+                </a>
+                <NuxtLink to="/signup" class="text-green-600 dark:text-green-400 hover:underline font-semibold">
+                  {{ $t('home.step1SignUp') }} →
+                </NuxtLink>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="text-center">
+              <div class="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                2
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{{ $t('home.step2Title') }}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{{ $t('home.step2Desc') }}</p>
+              <div class="text-4xl mt-4">📱</div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center">
+              <div class="bg-gradient-to-br from-purple-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                3
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{{ $t('home.step3Title') }}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{{ $t('home.step3Desc') }}</p>
+              <div class="text-4xl mt-4">♻️</div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="text-center">
+              <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">
+                4
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{{ $t('home.step4Title') }}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{{ $t('home.step4Desc') }}</p>
+              <div class="text-4xl mt-4">⭐</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-300 dark:border-gray-700 my-16"/>
+
+      <!-- Current Features Section -->
+      <div class="mb-16">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-3">{{ $t('home.currentFeatures') }}</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300">{{ $t('home.currentFeaturesSubtitle') }}</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 hover:shadow-2xl transition border-2 border-green-500">
+            <div class="text-4xl mb-4">🗺️</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.binMap') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              {{ $t('home.binMapDesc') }}
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 hover:shadow-2xl transition border-2 border-green-500">
+            <div class="text-4xl mb-4">🏆</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.ranking') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              {{ $t('home.rankingDesc') }}
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 hover:shadow-2xl transition border-2 border-green-500">
+            <div class="text-4xl mb-4">📊</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.userStats') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              {{ $t('home.userStatsDesc') }}
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 hover:shadow-2xl transition border-2 border-green-500">
+            <div class="text-4xl mb-4">🎁</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.rewards') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              {{ $t('home.rewardsDesc') }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-gray-300 dark:border-gray-700 my-16"/>
+
+      <!-- Future Features Section -->
+      <div class="mb-16">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-3">{{ $t('home.futureFeatures') }}</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300">{{ $t('home.futureFeaturesSubtitle') }}</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-xl p-8 hover:shadow-2xl transition border-2 border-dashed border-gray-300 dark:border-gray-600 opacity-75">
+            <div class="text-4xl mb-4">🔍</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.recognition') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              {{ $t('home.recognitionDesc') }}
+            </p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-xl p-8 hover:shadow-2xl transition border-2 border-dashed border-gray-300 dark:border-gray-600 opacity-75">
+            <div class="text-4xl mb-4">📦</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.wasteTracking') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              {{ $t('home.wasteTrackingDesc') }}
+            </p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-xl p-8 hover:shadow-2xl transition border-2 border-dashed border-gray-300 dark:border-gray-600 opacity-75">
+            <div class="text-4xl mb-4">🌍</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{{ $t('home.globalStats') }}</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              {{ $t('home.globalStatsDesc') }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+</style>
