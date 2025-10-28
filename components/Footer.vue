@@ -22,9 +22,18 @@
         <div>
           <h3 class="font-bold mb-4 leading-tight">{{ $t('footer.contact') }}</h3>
           <ul class="space-y-2 text-gray-400">
-            <li class="leading-relaxed">📧 betterthannever.business@gmail.com</li>
-            <li class="leading-relaxed">📱 +48 123 456 789</li>
-            <li class="leading-relaxed">📍 Łódź </li>
+            <li class="leading-relaxed flex items-center gap-2">
+              <Mail :size="16" class="flex-shrink-0" />
+              betterthannever.business@gmail.com
+            </li>
+            <li class="leading-relaxed flex items-center gap-2">
+              <Phone :size="16" class="flex-shrink-0" />
+              +48 123 456 789
+            </li>
+            <li class="leading-relaxed flex items-center gap-2">
+              <MapPin :size="16" class="flex-shrink-0" />
+              Łódź
+            </li>
           </ul>
         </div>
       </div>
@@ -34,3 +43,7 @@
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+import { Mail, Phone, MapPin } from 'lucide-vue-next';
+</script>
