@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { collection, getDocs } from 'firebase/firestore';
 import type { Location } from '~/types/location';
+import LocationsMap from '~/components/LocationsMap.vue';
 
 const { t } = useI18n();
 
