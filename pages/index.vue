@@ -21,12 +21,22 @@
             {{ $t('home.findEcoPoints') }}
           </NuxtLink>
           <NuxtLink 
+            v-if="user"
+            to="/profile" 
+            class="inline-flex items-center justify-center border-2 border-green-600 dark:border-green-500 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-gray-700 font-semibold py-3 px-6 rounded-lg shadow-lg transition text-lg"
+          >
+            <Award :size="20" class="mr-2" />
+            {{ $t('home.viewProfile') }}
+          </NuxtLink>
+          <NuxtLink 
+            v-else
             to="/login" 
             class="inline-flex items-center justify-center border-2 border-green-600 dark:border-green-500 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-gray-700 font-semibold py-3 px-6 rounded-lg shadow-lg transition text-lg"
           >
             <Award :size="20" class="mr-2" />
             {{ $t('home.viewProfile') }}
           </NuxtLink>
+          
         </div>
       </div>
     </section>
@@ -182,6 +192,15 @@
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
           <NuxtLink 
+            v-if="user"
+            to="/profile" 
+            class="group relative inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-xl transition-all transform hover:scale-105 text-lg"
+          >
+            <Smartphone :size="20" class="mr-2" />
+            {{ $t('home.getStarted') }}
+          </NuxtLink>
+          <NuxtLink
+            v-else
             to="/signup" 
             class="group relative inline-flex items-center justify-center bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-xl transition-all transform hover:scale-105 text-lg"
           >
@@ -205,6 +224,11 @@
 </template>
 
 <script setup lang="ts">
+import useAuth from '~/composables/useAuth';
+
+const { user } = useAuth();
+const isLoggedIn = useAuth();
+
 import { 
   MapPin, 
   Award, 

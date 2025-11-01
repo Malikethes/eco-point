@@ -4,13 +4,15 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  signInWithPopup,
   signOut as fbSignOut,
   deleteUser,
   type Auth,
-  type User
+  type User,
+  GoogleAuthProvider
 } from 'firebase/auth';
 import {
-  doc, setDoc, serverTimestamp, collection, query, where, getDocs
+  doc, setDoc, serverTimestamp, collection, query, where, getDocs, getDoc
 } from 'firebase/firestore';
 
 export const useFirebaseStore = defineStore('firebase', () => {
@@ -47,6 +49,42 @@ export const useFirebaseStore = defineStore('firebase', () => {
     }
   };
 
+  const signInWithGoogle = async () => {
+    loading.value = true; error.value = null;
+    try {
+      const provider = new GoogleAuthProvider();
+      const cred = await signInWithPopup(ensureAuth(), provider);
+      user.value = cred.user;
+
+      const userDocRef = doc(db, 'users', cred.user.uid);
+      const userDoc = await getDoc(userDocRef);
+
+      if (!userDoc.exists()) {
+        const profile = {
+          name: cred.user.displayName || 'User',
+          username: cred.user.email?.split('@')[0] || 'user' + Date.now(),
+          email: cred.user.email || '',
+          achievements: [],
+          rewards: [],
+          currentMonthSessions: 0,
+          pointsBalance: 0,
+          pointsEarned: 0,
+          totalSessions: 0,
+          createdAt: serverTimestamp()
+        };
+
+        await setDoc(userDocRef, profile);
+      }
+
+      return cred;
+    } catch (e) {
+      error.value = 'google-login-failed';
+      throw e;
+    } finally {
+      loading.value = false;
+    }
+  };
+
   const signUp = async (opts: {
     name: string;
     username: string;
@@ -74,7 +112,6 @@ export const useFirebaseStore = defineStore('firebase', () => {
 
     let cred = null;
     try {
-      // pre-check for existing username
       const pre = await getDocs(q);
       if (!pre.empty) {
         error.value = 'username-taken';
@@ -121,5 +158,5 @@ export const useFirebaseStore = defineStore('firebase', () => {
     user.value = null;
   };
 
-  return { user, isLoggedIn, loading, error, signIn, signUp, signOut };
+  return { user, isLoggedIn, loading, error, signIn, signInWithGoogle, signUp, signOut };
 });

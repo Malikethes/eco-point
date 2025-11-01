@@ -36,6 +36,7 @@ export default defineNuxtConfig({
   },
   
   runtimeConfig: {
+    resendApiKey: process.env.NUXT_RESEND_API_KEY,
     public: {
       firebaseApiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
       firebaseAuthDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN,

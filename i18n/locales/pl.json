@@ -92,6 +92,8 @@
     "subject": "Temat",
     "message": "Wiadomość",
     "sendBtn": "Wyślij Wiadomość",
+    "sending": "Wysyłanie...",
+    "successMessage": "Wiadomość wysłana pomyślnie! Odezwiemy się wkrótce.",
     "placeholders": {
       "name": "Twoje imię",
       "email": "twoj{'@'}email.com",
@@ -163,6 +165,8 @@
     "forgotPassword": "Zapomniałeś hasła?",
     "signIn": "Zaloguj się",
     "signingIn": "Logowanie...",
+    "signInWithGoogle": "Zaloguj się przez Google",
+    "orContinueWith": "Lub kontynuuj z",
     "error": "Nieprawidłowy email lub hasło, spróbuj ponownie",
     "noAccount": "Nie masz konta?",
     "signUp": "Zarejestruj się",
