@@ -92,6 +92,8 @@
     "subject": "Temat",
     "message": "Wiadomość",
     "sendBtn": "Wyślij Wiadomość",
+    "sending": "Wysyłanie...",
+    "successMessage": "Wiadomość wysłana pomyślnie! Odezwiemy się wkrótce.",
     "placeholders": {
       "name": "Twoje imię",
       "email": "twoj{'@'}email.com",

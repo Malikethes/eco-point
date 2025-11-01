@@ -92,6 +92,8 @@
     "subject": "Subject",
     "message": "Message",
     "sendBtn": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully! We'll get back to you soon.",
     "placeholders": {
       "name": "Your name",
       "email": "your{'@'}email.com",

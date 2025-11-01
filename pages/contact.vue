@@ -22,6 +22,18 @@
           </div>
           
           <form @submit.prevent="handleSubmit" class="space-y-6">
+            <div v-if="submitStatus === 'success'" class="p-4 bg-green-100 dark:bg-green-900 border-2 border-green-500 rounded-lg">
+              <p class="text-green-700 dark:text-green-200 font-medium">
+                ✓ {{ $t('contact.successMessage') }}
+              </p>
+            </div>
+
+            <div v-if="submitStatus === 'error'" class="p-4 bg-red-100 dark:bg-red-900 border-2 border-red-500 rounded-lg">
+              <p class="text-red-700 dark:text-red-200 font-medium">
+                ✗ {{ errorMessage }}
+              </p>
+            </div>
+
             <div class="space-y-2">
               <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 {{ $t('contact.yourName') }}
@@ -31,8 +43,9 @@
                 v-model="formData.name"
                 type="text"
                 :placeholder="$t('contact.placeholders.name')"
+                :disabled="isSubmitting"
                 required
-                class="w-full px-4 py-3 border-2 border-green-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
+                class="w-full px-4 py-3 border-2 border-green-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
 
@@ -45,8 +58,9 @@
                 v-model="formData.email"
                 type="email"
                 :placeholder="$t('contact.placeholders.email')"
+                :disabled="isSubmitting"
                 required
-                class="w-full px-4 py-3 border-2 border-green-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
+                class="w-full px-4 py-3 border-2 border-green-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
 
@@ -58,18 +72,20 @@
                 id="message"
                 v-model="formData.message"
                 :placeholder="$t('contact.placeholders.message')"
+                :disabled="isSubmitting"
                 required
                 rows="6"
-                class="w-full px-4 py-3 border-2 border-green-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors resize-none"
+                class="w-full px-4 py-3 border-2 border-green-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors resize-none disabled:opacity-50 disabled:cursor-not-allowed"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+              :disabled="isSubmitting"
+              class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send :size="20" />
-              {{ $t('contact.sendBtn') }}
+              {{ isSubmitting ? $t('contact.sending') : $t('contact.sendBtn') }}
             </button>
           </form>
         </div>
@@ -83,7 +99,7 @@
               </div>
               <div>
                 <h3 class="font-semibold text-gray-900 dark:text-white mb-1">{{ $t('contact.emailUs') }}</h3>
-                <p class="text-gray-600 dark:text-gray-300">betterthannever@gmail.com</p>
+                <p class="text-gray-600 dark:text-gray-300">betterthannever.business@gmail.com</p>
                 <p class="text-gray-600 dark:text-gray-300">betterthannever.support@gmail.com</p>
               </div>
             </div>
@@ -167,6 +183,10 @@ const formData = ref({
   message: ''
 });
 
+const isSubmitting = ref(false);
+const submitStatus = ref<'idle' | 'success' | 'error'>('idle');
+const errorMessage = ref('');
+
 const teamMembers = [
   {
     name: 'Mikita Kutsenko',
@@ -195,8 +215,39 @@ const teamMembers = [
   }
 ];
 
-const handleSubmit = () => {
-  console.log('Message sent:', formData.value);
-  formData.value = { name: '', email: '', message: '' };
+const handleSubmit = async () => {
+  if (!formData.value.name || !formData.value.email || !formData.value.message) {
+    errorMessage.value = 'Please fill in all fields';
+    submitStatus.value = 'error';
+    return;
+  }
+
+  isSubmitting.value = true;
+  submitStatus.value = 'idle';
+  errorMessage.value = '';
+
+  try {
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: formData.value
+    });
+
+    submitStatus.value = 'success';
+    formData.value = {
+      name: '',
+      email: '',
+      message: ''
+    };
+
+    setTimeout(() => {
+      submitStatus.value = 'idle';
+    }, 5000);
+  } catch (error: any) {
+    console.error('Error sending message:', error);
+    submitStatus.value = 'error';
+    errorMessage.value = error.data?.message || 'Failed to send message. Please try again.';
+  } finally {
+    isSubmitting.value = false;
+  }
 };
 </script>
