@@ -150,8 +150,14 @@
             :key="index"
             class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 text-center border-2 border-transparent hover:border-green-300 dark:hover:border-green-600"
           >
-            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-blue-500 mx-auto mb-4 flex items-center justify-center">
-              <Users :size="40" class="text-white" />
+            <div class="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center">
+              <img 
+                v-if="member.photo" 
+                :src="member.photo" 
+                :alt="member.name"
+                class="w-full h-full object-cover"
+              />
+              <Users v-else :size="40" class="text-white" />
             </div>
             <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-1">{{ member.name }}</h3>
             <p class="text-sm text-green-600 dark:text-green-400 font-medium mb-3">{{ member.role }}</p>
@@ -191,27 +197,32 @@ const teamMembers = [
   {
     name: 'Mikita Kutsenko',
     role: 'Creative Designer',
-    description: 'Documentation specialist creating detailed design systems and user guides'
+    description: 'Documentation specialist creating detailed design systems and user guides',
+    photo: '/team/mikita-kutsenko.jpg'
   },
   {
     name: 'Dmytro Malinovskyi',
     role: 'Frontend Developer',
-    description: 'Building responsive and intuitive web interfaces for EcoPoint platform'
+    description: 'Building responsive and intuitive web interfaces for EcoPoint platform',
+    photo: '/team/dmytro-malinovskyi.jpg'
   },
   {
     name: 'Aliaksandr Yurusau',
     role: 'Frontend Developer',
-    description: 'Creating seamless user experiences with modern web technologies'
+    description: 'Creating seamless user experiences with modern web technologies',
+    photo: '/team/aliaksandr-yurusau.jpg'
   },
   {
     name: 'Artem Hnap',
     role: 'Mobile Developer',
-    description: 'Developing native mobile applications for iOS and Android platforms'
+    description: 'Developing native mobile applications for iOS and Android platforms',
+    photo: '/team/artem-hnap.jpg'
   },
   {
     name: 'Mikita Dzeviatau',
     role: 'Hardware Engineer',
-    description: 'Designing and assembling smart recycling bin prototypes with IoT sensors'
+    description: 'Designing and assembling smart recycling bin prototypes with IoT sensors',
+    photo: '/team/mikita-dzeviatau.jpg'
   }
 ];
 
