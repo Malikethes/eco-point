@@ -170,7 +170,7 @@ const formData = ref({
 const teamMembers = [
   {
     name: 'Mikita Kutsenko',
-    role: 'Figma Documentator',
+    role: 'Creative Designer',
     description: 'Documentation specialist creating detailed design systems and user guides'
   },
   {

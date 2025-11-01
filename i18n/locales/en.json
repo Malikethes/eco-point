@@ -163,6 +163,8 @@
     "forgotPassword": "Forgot password?",
     "signIn": "Sign In",
     "signingIn": "Signing in...",
+    "signInWithGoogle": "Sign in with Google",
+    "orContinueWith": "Or continue with",
     "error": "Wrong email or password, try again",
     "noAccount": "Don't have an account?",
     "signUp": "Sign up",
